@@ -21,7 +21,9 @@ public class DishServiceImpl implements DishService {
     private DishFlavorMapper dishFlavorMapper;
 
     /**
-     * 新增菜品     * @param dishDTO
+     * 新增菜品
+     *
+     * @param dishDTO
      */
     @Transactional
     public void saveWithFlavor(DishDTO dishDTO) {
