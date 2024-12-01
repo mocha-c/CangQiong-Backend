@@ -33,7 +33,7 @@ public class CommonController {
         String extension = originalFilename.substring(originalFilename.lastIndexOf("."));
 
         //将文件上传到阿里云
-        String fileName = UUID.randomUUID().toString() + extension;
+        String fileName = UUID.randomUUID() + extension;
         try {
             String filePath = aliOssUtil.upload(file.getBytes(), fileName);
             return Result.success(filePath);
