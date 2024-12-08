@@ -5,6 +5,7 @@ import com.sky.dto.UserLoginDTO;
 import com.sky.entity.User;
 import com.sky.properties.JwtProperties;
 import com.sky.result.Result;
+import com.sky.service.OrderService;
 import com.sky.service.UserService;
 import com.sky.utils.JwtUtil;
 import com.sky.vo.UserLoginVO;
@@ -29,6 +30,8 @@ public class UserController {
     private UserService userService;
     @Autowired
     private JwtProperties jwtProperties;
+    @Autowired
+    private OrderService orderService;
 
     /**
      * C端用户登录--微信登录
@@ -47,4 +50,6 @@ public class UserController {
         UserLoginVO userLoginVO = UserLoginVO.builder().id(user.getId()).openid(user.getOpenid()).token(token).build();
         return Result.success(userLoginVO);
     }
+
+
 }
